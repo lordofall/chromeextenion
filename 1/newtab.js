@@ -1,3 +1,6 @@
+var canvas = null;
+var ctx = null;
+var radius = null;
 function startTime() {
 	var today = new Date();
 	var h = today.getHours();
@@ -16,21 +19,24 @@ function checkTime(i) {
 
 document.addEventListener('DOMContentLoaded', function () {
   startTime();
-  var canvas = document.getElementById("canvas");
-var ctx = canvas.getContext("2d");
-var radius = canvas.height / 2;
-ctx.translate(radius, radius);
-radius = radius * 0.90
-setInterval(drawClock, 1000);
+
+  //drawClock(ctx, radius);
+    setInterval(drawClock, 1000);
 });
 
 
 
 
 function drawClock() {
-  drawFace(ctx, radius);
-  drawNumbers(ctx, radius);
-  drawTime(ctx, radius);
+	  canvas = document.getElementById("canvas");
+  ctx = canvas.getContext("2d");
+  radius = canvas.height / 2;
+	ctx.translate(radius, radius);
+	radius = radius * 0.90
+	drawFace(ctx, radius);
+	drawNumbers(ctx, radius);
+	drawTime(ctx, radius);
+	//var t = setInterval(drawClock(ctx, radius), 1000);
 }
 
 function drawFace(ctx, radius) {
