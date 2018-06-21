@@ -1,6 +1,3 @@
-var canvas = null;
-var ctx = null;
-var radius = null;
 function startTime() {
 	var today = new Date();
 	var h = today.getHours();
@@ -10,34 +7,37 @@ function startTime() {
 	s = checkTime(s);
 	document.getElementById('txt').innerHTML = new Date() + " "
 	h + ":" + m + ":" + s;
-	var t = setTimeout(startTime, 500);
+	var t = setTimeout(startTime, 100);
 }
 function checkTime(i) {
 	if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
 	return i;
 }
-
+var canvas;
+var ctx;
+var radious;
 document.addEventListener('DOMContentLoaded', function () {
-  startTime();
-
-  //drawClock(ctx, radius);
-    setInterval(drawClock, 1000);
+startTime();
+initializeVar();
+drawClock();
 });
 
 
-
-
+function initializeVar() {
+canvas = document.getElementById("canvas");
+ctx = canvas.getContext("2d");
+radius = canvas.height / 2;
+ctx.translate(radius, radius);
+radius = radius * 0.90
+console.log('variable initialized');
+}
+// https://www.w3schools.com/graphics/tryit.asp?filename=trycanvas_clock_start
 function drawClock() {
-	  canvas = document.getElementById("canvas");
-  ctx = canvas.getContext("2d");
-  radius = canvas.height / 2;
-	ctx.translate(radius, radius);
-	radius = radius * 0.90
 	drawFace(ctx, radius);
 	drawNumbers(ctx, radius);
 	drawTime(ctx, radius);
-	//var t = setInterval(drawClock(ctx, radius), 1000);
-}
+	setInterval(drawClock, 100);
+};
 
 function drawFace(ctx, radius) {
   var grad;
