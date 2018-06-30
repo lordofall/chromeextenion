@@ -108,3 +108,16 @@ function drawHand(ctx, pos, length, width) {
     ctx.stroke();
     ctx.rotate(-pos);
 }
+
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var myObj = JSON.parse(this.responseText);
+        console.log(myObj.quotation[80].quote);
+		console.log(myObj.quotation[80].by);
+    }
+};
+xmlhttp.open("GET", "quote.json", true);
+xmlhttp.send();
+
+
