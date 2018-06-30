@@ -7,6 +7,7 @@
 	</head>
 	<script src="newtab.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="newtab.css">
 
 <!-- jQuery library 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
@@ -15,20 +16,26 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
   <body>
   <div class="container">
-	<p><h2><div id="txt"></div> </h2></p>
-	<!-- <ul>
-		<li><a href="http://timesofindia.indiatimes.com">toi</a></li>
-		<li><a href="https://www.dawn.com/">dawn</a></li>
-		<li><a href="https://qtrac.qualitykiosk.com/#/">qtrac</a></li>
-		<li><a href="http://10.0.19.240:8080/qtrac/">qtrac qa</a></li>
-		<li><a href="http://localhost:9000/#/">qtrac local</a></li>
-	</ul> -->
-    <br/>
 	
-	<canvas id="canvas" width="300" height="300"
-		style="background-color:#333;">
-	</canvas>
+
+    <div style="width: 200px; height: 200px; background-color: red"></div>
+	<br/><br/><br/><br/><br/><br/>
+<div class="center">	
+	<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+</div>
+	<div class="topcorner" id="clock"> 
+		<canvas id="canvas" width="200" height="200" 
+			style="background-color:#333;">
+		</canvas>
+		<h3><div id="txt" style="padding-left: 40px;"></div></h3>
+	</div>
 	
+	<div id="favouriteUrls" class="leftbottom">
+		<a href="http://timesofindia.indiatimes.com">times of India</a> | <a href="https://www.dawn.com/">dawn</a> | <a href="https://qtrac.qualitykiosk.com/#/">qtrac</a> | <a href="http://10.0.19.240:8080/qtrac/">qtrac qa</a> | <a href="http://localhost:9000/#/">qtrac local</a> | <a href="http://10.0.19.231:8080/q-bus">qbus</a> |
+	</div>
 	
 
 </div>
